@@ -12,7 +12,7 @@
     
     
     
-    <title>CSAPP阅读笔记 | Dawnbeam‘s Cyberhome</title>
+    <title>Dawnbeam‘s Cyberhome</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -163,13 +163,13 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">CSAPP阅读笔记</h1>
+    <h1 class="title"></h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2023-05-29
+            2024-08-13
         </div>
         <div class="cube-article-tags">
     <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
@@ -179,34 +179,26 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <h1 id="CSAPP-Notebook"><a href="#CSAPP-Notebook" class="headerlink" title="CSAPP Notebook"></a>CSAPP Notebook</h1><h1 id="计算机系统漫游"><a href="#计算机系统漫游" class="headerlink" title="计算机系统漫游"></a>计算机系统漫游</h1><h2 id="解密hello-c文件"><a href="#解密hello-c文件" class="headerlink" title="解密hello.c文件"></a>解密<code>hello.c</code>文件</h2><h3 id="hello-c源文件"><a href="#hello-c源文件" class="headerlink" title="hello.c源文件"></a><code>hello.c</code>源文件</h3><p><code>hello</code>程序是从<code>hello.c</code>源文件开始的,源程序实际上为值0和1字组成的<code>位</code>序列,8个位一组称为<code>字节</code>.<br>每个字节表示程序中的某些文本字符,如在<code>ASCII标准</code>下,35这个单字节大小的整数值表示<code>#</code>这个预处理符号.<br>只由ASCII字符构成的文件称为文本文件,其他所有文件都称为<code>二进制文件</code>.<br><code>hello.c</code>的表示方法说明了一个基本思想:<code>系统中所有信息,如:磁盘文件,内存中的程序,存放的而用户数据以及网络上传送的数据,都是由一串比特构成的</code>.区分这些数据对象的唯一方法就是我们读到这些数据对象时的上下文,这也就是我们程序员需要干的事.  </p>
-<h3 id="细说hello程序的运行"><a href="#细说hello程序的运行" class="headerlink" title="细说hello程序的运行"></a>细说<code>hello</code>程序的运行</h3><p><code>hello</code>程序作为一个高级C语言程序,人类能很轻松的读懂,然而将他交给计算机系统,每条C语句必须被其他程序转化为<code>低级机器语言指令</code>.<br>这些指令会被打包成<code>可执行目标程序</code>,并以二进制磁盘文件的形式存放起来.<br>以Unix系统为例,<code>GCC编译器驱动程序</code>将hello程序从源文件转化到可执行目标程序分一下四个阶段:  </p>
+        <h1 id="面试经历-影石insta360-DevOps日常实习"><a href="#面试经历-影石insta360-DevOps日常实习" class="headerlink" title="面试经历-影石insta360-DevOps日常实习"></a>面试经历-影石insta360-DevOps日常实习</h1><p>面试官人很和善，没考八股没考算法，但是开源经历和项目经历都没问，20分钟就把我处理完了，我直接被闪电战打懵</p>
+<p>拷打：</p>
 <ol>
-<li>预处理阶段: <code>预处理器(cpp)</code>根据<code>预处理符号#</code>,修改原始的C程序,如#include&lt;stdio.h&gt;命令会告诉预处理器读取stdio.h的内容并直接复制粘贴到程序文本中,结果就得到了另一个C程序,通常以.i为文件扩展名,如hello.i</li>
-<li>编译阶段: <code>编译器(cll)</code>将hello.i翻译成由<code>汇编语言</code>构成的hello.s,<code>汇编语言</code>是一种低级机器语言指令,为不同高级语言的不同编译器提供了通用的输出语言.</li>
-<li>汇编阶段: 汇编器(as)将hello.s翻译成<code>机器语言指令</code>,这才是计算机能直接看懂的<code>语言</code>,并将这些指令打包成一种叫<code>可重定位目标程序</code>的格式,并将结果保存为hello.o</li>
-<li>链接阶段: 在hello程序中我们调用了以恶printf函数,它是每个C编译器都提供的C标准库中的函数,存在于一个名为printf.o的单独的预编译好了的目标文件中,这个文件必须以某种方式与我们的hello.o程序合并.链接器(ld)就负责处理这种合并.最后结果得到hello可执行(目标)文件,可以被加载到内存中由系统执行.</li>
+<li>自我介绍</li>
+<li>GMP模型及原理</li>
+<li>使用Goroutine并发写100之和</li>
+<li>场景题：现有三个服务于K8S集群中，需要做这三个服务的点击量收集，并且根据点击量识别异常以及即时联系方式告警</li>
+<li>容器 Dockerfile Pod三个概念的联系与区别</li>
+<li>Rust Java Go这三者内存管理上的区别</li>
+<li>Git冲突是怎么回事，怎么解决</li>
+<li>Redis的持久化方式及优缺点</li>
+<li>是否了解Web开发，前端后端都写？用过哪些后端工具？</li>
+<li>怎么理解DevOps</li>
 </ol>
-<h3 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h3><p>为了理解运行hello程序时发生了什么，我们需要对计算机硬件模型有个简单认知：<br><img src="/images/csapp1.png" alt="img.png"></p>
+<p>反问：</p>
 <ol>
-<li>总线：贯穿整个系统的一组电子管道，负责在各个部件间传递信息字节。总线通常被设计成传送定长的字节块（word），字节块中的字节数（字长）是一个基本的系统参数，并且各个系统中不尽相同，要么是4个字节（32位）。要么是8个字节（64位）</li>
-<li>I&#x2F;O设备： 输入&#x2F;输出设备连接系统与外部世界（键盘鼠标、显示器、磁盘、网络适配器等），每个I&#x2F;O设备通过一个控制器（I&#x2F;O设备本身或主板上的芯片组）或适配器（一块插在主板插槽上的卡）与I&#x2F;O总线相连，他们的功能都是在I&#x2F;O总线和I&#x2F;O设备之间传递信息。</li>
-<li>主存：即常说的内存。一个临时存储设备，可以在处理器执行程序时存放程序和程序处理的数据。主存是由<code>动态随机存取存储器(DRAM）芯片</code>组成的，抽象来看，存储器是一个线性的字节数组，每个字节都有其唯一地址（数组index），这些地址都是从零开始的。</li>
-<li>处理器：即CPU，核心是一个大小位一个字的储存设备（或寄存器），称为程序计数器（PC）。任何时候，PC都只想主存的某条机器语言指令（即存着指令地址）。CPU一直在干一件事：执行PC指向的指令，更新PC，使其指向下一条指令。（当然实际上操作要复杂的多）。<code>寄存器文件</code>是CPU里一个小的存储设备，由一些单个字长的寄存器组成。<code>算术/逻辑单元（ALU）</code>如其名，负责计算信的数据和地址值。<br>处理器执行一个指令的工作流程简单描述是这样的： <ol>
-<li>加载：从主存复制数据到寄存器，更新寄存器内容  </li>
-<li>存储：从寄存器复制数据到主存某个位置，更新主存这个位置的内容</li>
-<li>操作： 把两个寄存器的内容复制到ALU进行算数运算，将结果更新到一个寄存器中。</li>
-<li>跳转：从指令本身抽取数据（一个字）并更新到PC中。</li>
+<li>贵司DevOps业务有哪些？</li>
+<li>为什么没问项目和开源经历？</li>
+<li>觉得我还有哪些提升的？</li>
 </ol>
-</li>
-</ol>
-<h3 id="解剖hello程序的运行"><a href="#解剖hello程序的运行" class="headerlink" title="解剖hello程序的运行"></a>解剖<code>hello</code>程序的运行</h3><p>简单描述系统硬件组成后，现在开始简单介绍运行hello程序时到底发生了什么。  </p>
-<ol>
-<li>当我们使用<code>shell</code>程序输入命令<code>./hello</code>后，<code>shell</code>程序会逐一读入这些字符到寄存器，然后存到内存中。</li>
-<li>敲完回车后，<code>shell</code>程序便会执行一系列指令加载hello可执行文件，然后hello目标文件中的代码和数据（包括最终输出的字符串”hello,world\n”）将从磁盘复制到主存，主存加载完这些数据后，CPU开始执行hello程序中main程序的机器语言指令，这些指令将”hello,world\n”字符串的字节从主存复制到寄存器文件，再复制到显示设备，最终被我们看见。</li>
-</ol>
-<h3 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h3><p>在hello程序运行的过程中，其实shell加载和运行hello程序以及hello程序输出时，这两个程序并没有直接访问键盘、显示器、磁盘这类硬件设备，而是依靠<code>操作系统</code>提供的服务访问的。操作系统可以看作应用程序（如这里的shell程序和hello程序）和硬件之间插入的一层软件，所有的应用程序对硬件的操作尝试都必须通过操作系统，这能有效防止硬件被失控的应用程序滥用，并可以向应用程序提供简单一致的机制来控制低级硬件设备。</p>
-<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>hello程序在现代操作系统上运行时，看起来像是操作系统只有这个程序在运行，独占了CPU、主存、I&#x2F;O设备，CPU不间断地在一条接着一条地执行这个程序的指令。实际上这是一个假象，是通过<code>进程</code>这个概念实现的。<br>进程是操作系统对一个正在运行的程序的一种抽象，一个系统上可以同时运行多个进程，而每个进程好像都独占了硬件。实际上这是通过<code>并发运行</code>，像小丑同时把玩三个球一样，通过处理器的调度，让不同进程间的指令交错执行。<br>那么在这个过程中，操作系统需要保持跟踪进程运行所需的所有状态信息，也就是<code>上下文</code>（包括PC和寄存器文件的当前值、主存的内容等）。当操作系统决定要把控制权从当前进程转移到某个新进程时，就会进行上下文切换，即保存当前的上下文、恢复新进程的上下文，将控制权交给新进程，信进程就会从它上次停止的地方开始。<br>比如在刚才使用shell程序执行hello程序的例子中，可以看到两个并发的进程：shell进程与hello进程。<br>最开始只有shell进程在运行，在等待命令行的输入。当我们输入指令<code>./hello</code>后，shell会调用一个专门的函数:<code>系统调用</code>，将控制权传递给操作系统。此时操作系统会保存shell进程的上下文，创建一个新的hello进程及其上下文，然后传递控制权给hello进程。hello进程终止后（即输出完毕），再进行系统调用，操作系统会恢复shell进程的上下文，将控制权交还给shell进程，随后shell进程会等待下一个命令行输入。<br>以上可以得知，从一个进程到另一个进程的转换是通过<code>系统调用</code>函数，交给<code>操作系统内核（kernel）</code>管理的。内核是操作系统代码常驻内存的部分，当应用程序需要操作系统执行某些操作时，它就会执行<code>系统调用（system call）</code>指令，将控制权交给内核，然后内核再执行被请求的操作后再返回应用程序。<br>值得注意的是，内核并不是一个独立的进程，它只是系统管理全部进程所用代码和数据结构的集合。</p>
 
     </div>
 </div>
@@ -308,7 +300,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/post/CSAPP%20Notebook.html" title="CSAPP阅读笔记">CSAPP阅读笔记</a>
+                    <a href="/post/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E5%BD%B1%E7%9F%B3insta360-DevOps%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0.html" title=""></a>
                 </p>
             </div>
             
