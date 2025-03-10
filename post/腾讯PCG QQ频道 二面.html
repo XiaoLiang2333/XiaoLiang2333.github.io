@@ -12,7 +12,7 @@
     
     
     
-    <title>如何使用Hexo框架搭载并部署一个属于自己的静态博客网站 | Dawnbeam‘s Cyberhome</title>
+    <title>Dawnbeam‘s Cyberhome</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -163,13 +163,13 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">如何使用Hexo框架搭载并部署一个属于自己的静态博客网站</h1>
+    <h1 class="title"></h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2023-05-23
+            2025-03-10
         </div>
         <div class="cube-article-tags">
     <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
@@ -179,45 +179,102 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <h2 id="提前准备："><a href="#提前准备：" class="headerlink" title="提前准备："></a>提前准备：</h2><ol>
-<li>一个github账号</li>
-<li>安装并对<a target="_blank" rel="noopener" href="http://git-scm.com/">git</a> 有一点小了解</li>
-<li>安装<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a></li>
-<li>学会使用bing自己解决问题</li>
+        <h1 id="腾讯PCG-QQ频道-二面"><a href="#腾讯PCG-QQ频道-二面" class="headerlink" title="腾讯PCG QQ频道 二面"></a>腾讯PCG QQ频道 二面</h1><ol>
+<li><p>面试官自我介绍与业务介绍</p>
+</li>
+<li><p>自我介绍 说了一个自己发现的slice扩容<code>异常</code>的案例</p>
+</li>
+<li><p>两道笔试题：</p>
+<ol>
+<li>LRU</li>
+<li>LC.239 滑动窗口最大值</li>
 </ol>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>使用Powershell&#x2F;git bash&#x2F;cmd ···<br>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h2><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt; </span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p><code>&lt;folder&gt;</code>替换为你想要存储博客文件的文件夹名。 </p>
-<p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<p>其中<code>_config.yml</code>文件是我们建站、部署博客需要经常用到的，其他文件的请详情参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></p>
-<h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p><code>_config.yml</code>文件中，有关于网站的配置条目如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 你个人博客的标题</span><br><span class="line">subtitle: 你个人博客的子标题</span><br><span class="line">description: 你个人博客的简述</span><br><span class="line">keywords: 你个人博客的关键词</span><br><span class="line">author: 你的名字</span><br><span class="line">language: 语言</span><br><span class="line">timezone: 时区</span><br></pre></td></tr></table></figure>
-<p>简单配置完之后，我们就可以开始将博客部署到github上了。</p>
-<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><ol>
-<li>新建一个用于储存你博客网站源代码的仓库，仓库名必须为<code>你的github名</code>.github.io(建议设置为公开)</li>
-<li>使用git bash输入命令<code>cd &lt;folder&gt;</code>进入到博客文件夹,输入命令<code>npm install hexo-deployer-git --save</code>安装 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></li>
-<li>修改博客配置文件<code>_config.yml</code>,最下文deploy行：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: [repository url]刚刚新建的仓库地址</span><br><span class="line">  branch: [branch](通常为main)</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
-(若没有<code>repo</code>、<code>branch</code>等行请自行添加)</li>
-<li>执行 hexo clean &amp;&amp; hexo deploy，生成站点文件并推送至远程库。<br>(如果遇到网络问题导致推送失败，请设置git代理，以<code>clash</code>为例，git bash中输入命令：<br> <code>git config --global https.proxy https://127.0.0.1:7890</code> &#x2F;&#x2F;7890为<code>clash</code>默认端口)</li>
-<li>设置github pages：进入刚新建的仓库，-<code>settings</code> -<code>Pages</code>,将默认分支设置为_config.yml配置中的分支名称（通常是main）。<br>稍等片刻，即可以通过<code>你的github名</code>.github.io&#96;访问你的个人博客了！</li>
+</li>
+<li><p>讲一个你觉得提升最大的项目，说一下遇到的挑战以及解决</p>
+</li>
+<li><p>pika是基于C++还是Go，pika-operator呢</p>
+</li>
+<li><p>讲项目难点</p>
+</li>
+<li><p>为什么会有BigKey？</p>
+</li>
+<li><p>bigkey熔断会不会对上游业务有影响？</p>
+</li>
+<li><p>继续讲难点</p>
+</li>
+<li><p>你的启动顺序的保证和这个有什么关系</p>
+</li>
+<li><p>rocksdb数据结构</p>
+</li>
+<li><p>pika和redis相比有什么优势和劣势</p>
+</li>
+<li><p>有经过压测吗？跟redis对比</p>
+</li>
+<li><p>pika-operator是跟参考codis的吗？</p>
+</li>
+<li><p>你们有对codis做优化吗</p>
+</li>
+<li><p>官方的codis没做，会有什么影响？redis没做，会有什么影响？</p>
+</li>
+<li><p>你们为什么要选codis？为什么不选raft之类的</p>
+</li>
+<li><p>是operator来控制pika抢主的情况吗？</p>
+</li>
+<li><p>像codis这种解决方案，有对应的operator吗</p>
+</li>
+<li><p>pika-operator实现与kubeblocks实现有什么本质上的区别吗</p>
+</li>
+<li><p>你觉得哪个更好？或者他们为什么这么选择？</p>
+</li>
+<li><p>最开始做的时候kubeblocks还没有是吗</p>
+</li>
+<li><p>如果是现在你会选择哪种解决方案？</p>
+</li>
+<li><p>我感觉当时你们是想先紧急做一个出来用出于这个目的的是吧</p>
+</li>
+<li><p>pika跟其他基于rocksdb做的存储优劣？</p>
+</li>
+<li><p>go string是否线程安全？</p>
+</li>
+<li><p>pika服务cpu经常cpu飙高，有什么排查思路？</p>
+</li>
+<li><p>你们这个pika感觉属于自己玩的一个项目？比较老而且后面也有新的这种</p>
+</li>
+<li><p>哪些是你做的，哪些是你导师做的</p>
+</li>
+<li><p>AI这一块有什么理解吗</p>
+</li>
+<li><p>反问：</p>
+<ol>
+<li><p>评价，建议？</p>
+<p>整体还可以，一些深挖的点可以了解一下，你做的项目算是比较深入，扩展出来的点没有很透彻，比如有问你rocksdb其实你不是很了解，后面那些发散的点可以去透彻的了解一下</p>
+</li>
+<li><p>技术栈？</p>
+<p>go，框架：trpc-go，paas层用腾讯云，自己实现saas层逻辑</p>
+</li>
+<li><p>后面推进的话，大概流程？</p>
+<ol>
+<li>大概还有1-2轮技术面</li>
 </ol>
-<h2 id="以上，你便成功的在github上部署好了自己的个人博客网站，快去写你自己的第一篇博客吧！"><a href="#以上，你便成功的在github上部署好了自己的个人博客网站，快去写你自己的第一篇博客吧！" class="headerlink" title="以上，你便成功的在github上部署好了自己的个人博客网站，快去写你自己的第一篇博客吧！"></a>以上，你便成功的在github上部署好了自己的个人博客网站，快去写你自己的第一篇博客吧！</h2>
+</li>
+</ol>
+<p>end:会把今天面试结果给下一轮面试官，他会综合评定请耐心等待，估计要一周左右</p>
+</li>
+</ol>
+
     </div>
 </div>
 
 <div class="cube-article-nav">
     <ul>
         
-        <li class="prev">
-            <a href="/post/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86-%E5%BD%B1%E7%9F%B3insta360-DevOps%E6%97%A5%E5%B8%B8%E5%AE%9E%E4%B9%A0.html">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+        
+        <li class="next">
+            <a href="/post/%E8%85%BE%E8%AE%AFPCG%20QQ%E5%90%8E%E5%8F%B0%20QQ%E9%A2%91%E9%81%93%E4%B8%80%E9%9D%A2.html">
                 
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
-        
         
     </ul>
 </div>
